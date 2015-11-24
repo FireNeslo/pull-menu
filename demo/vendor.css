@@ -28,7 +28,3 @@ pull-menu-item, [pull-menu-item] {
       -ms-flex: 1;
           flex: 1;
 }
-
-pull-menu-item.pull-menu-item-selected {
-  color: blue;
-}

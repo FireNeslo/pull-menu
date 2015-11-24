@@ -1,8 +1,43 @@
 body {
   padding: 0px;
   margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  color: #302c2e;
+  text-align: center;
+  overflow-y: hidden;
+  padding-top: 100px;
 }
 pull-menu {
   background-color: #df2882;
   color: #efe9ec;
+  -webkit-transition: -webkit-transform linear 150ms;
+  transition: -webkit-transform linear 150ms;
+  transition: transform linear 150ms;
+  transition: transform linear 150ms, -webkit-transform linear 150ms;
+}
+pull-menu pull-menu-item {
+  padding: 1em;
+  font-size: 1em;
+  text-align: center;
+  font-size: 0.6em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+pull-menu pull-menu-item img {
+  height: 30px;
+}
+pull-menu pull-menu-item[on-select] {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+pull-menu pull-menu-item[on-select].pull-menu-item-selected {
+  color: #efe9ec;
+  background-color: #f35fa8;
+}
+.action {
+  color: #df2882;
 }

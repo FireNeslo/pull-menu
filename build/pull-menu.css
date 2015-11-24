@@ -9,10 +9,10 @@ pull-menu, [pull-menu] {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: -webkit-transform linear 250ms;
-  transition: -webkit-transform linear 250ms;
-  transition: transform linear 250ms;
-  transition: transform linear 250ms, -webkit-transform linear 250ms;
+  -webkit-transition: -webkit-transform linear 200ms;
+  transition: -webkit-transform linear 200ms;
+  transition: transform linear 200ms;
+  transition: transform linear 200ms, -webkit-transform linear 200ms;
 }
 
 pull-menu.open, [pull-menu].open {

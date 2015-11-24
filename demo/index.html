@@ -2,26 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pull-Menu</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="pull-menu.css">
   <link rel="stylesheet" href="vendor.css">
   <link rel="stylesheet" href="demo.css">
 </head>
-<body ng-app="pullMenu">
+<body ng-app="pullMenu" ng-init="playing = true">
   <pull-menu>
     <pull-menu-item on-select="selected = 'one'">
-      <h3>One</h3>
+      <img src="images/prev.png" />
+      <div>Prev</div>
     </pull-menu-item>
+
+    <pull-menu-item on-select="playing = !playing">
+      <div ng-if="playing">
+        <img src="images/pause.png" />
+        <div>Pause</div>
+      </div>
+      <div ng-if="!playing">
+        <img src="images/play.png" />
+        <div>Play</div>
+      </div>
+    </pull-menu-item>
+
+
+
     <pull-menu-item on-select="selected = 'two'">
-      <h3>Two</h3>
+      <img src="images/next.png" />
+      <div>Next</div>
     </pull-menu-item>
   </pull-menu>
 
-  <h1>
-    Selected: {{selected}}
-  </h1>
+  <h3>
+    <span ng-if="playing">Now</span><span ng-if="!playing">Not</span> playing:
+  </h3>
+  <h1>Kent - <span class="action">Pärlor</span></h1>
+  <img src="http://shikovideot.com/images/loading.gif" ng-if="playing" />
 
   <script src="vendor.js" charset="utf-8"></script>
-  <script src="pull-menu.js" charset="utf-8"></script>
 </body>
 </html>

@@ -29032,7 +29032,8 @@ angular.module('pullMenu', [])
   var transform = 'transform' in $document[0].body.style ?
     'transform' : 'WebkitTransform'
   function client(axis,event) {
-    return (event.touches?event.touches[0]:event)['client'+axis.toUpperCase()]
+    return (event.touches?event.touches[0]||{}:event)
+      ['client'+axis.toUpperCase()] || Infinity
   }
   return {
     controller: function PullMenuController() {
@@ -29079,18 +29080,17 @@ angular.module('pullMenu', [])
             element.removeClass('pull-menu-item-selected')
           }
         })
-        if(relative+height >= height/2) return element.css({
-            [transform]: 'translateY(0)'
-          })
+
         if(relative >= 0) return
         element.css({[transform]: 'translateY('+(relative)+'px)'})
+        if(relative+height >= height/2) element.css({
+          [transform]: 'translateY(0)'
+        })
       })
       $document.on('mouseup touchend touchcancel', function(event) {
         dragging = false
         var relative = client('y', event) - position
-        setTimeout(function() {
-          element.css({[transform]: 'translateY(-100%)' })
-        },250)
+        element.css({[transform]: 'translateY(-100%)' })
         if(relative < height/2) return
         var selected = element[0].querySelector('.pull-menu-item-selected')
         if(selected) {

@@ -1,11 +1,36 @@
 $action = #DF2882
+$tinted-action = #f35fa8
+$highlight = #4dffcb
 $dark = #302C2E
 $light = #EfE9EC
 
 body
   padding: 0px
   margin: 0px
+  font-family: 'Open Sans', sans-serif
+  color: $dark
+  text-align: center
+  overflow-y: hidden
+  padding-top: 100px
 
 pull-menu
   background-color: $action
   color: $light
+  transition: transform linear 150ms;
+  pull-menu-item
+    padding: 1em
+    font-size: 1em
+    text-align: center
+    font-size: 0.6em
+    flex: 1
+
+    img
+      height: 30px
+    &[on-select]
+      flex: 3
+    &[on-select].pull-menu-item-selected
+      color: $light
+      background-color: $tinted-action
+
+.action
+  color: $action
