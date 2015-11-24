@@ -15,7 +15,3 @@ pull-menu-item, [pull-menu-item] {
   display: block;
   flex: 1;
 }
-
-pull-menu-item.pull-menu-item-selected {
-  color: blue;
-}
