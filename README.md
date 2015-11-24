@@ -1,11 +1,7 @@
-fn-drag-drop-angular
+pull-menu
 ===
-#### also check out
-* [The jQuery wrapper](jquery.md)
-* [The polyfill (experimental)](polyfill.md)
-* [fnDragDrop](../README.md)
 
-AngularJS wrapper for fnDragDrop
+AngularJS pull-menu
 
 ## Install
 ### npm
