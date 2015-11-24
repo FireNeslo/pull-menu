@@ -41,7 +41,7 @@ directive('pullMenu', function pullMenu($document) {
       }
       $document.on('touchmove mousemove', function move(event) {
         if(!dragging) return
-        var relative = client('y',event) - position
+        var relative = client('y',event) - position - height
         inRange(event, function isInRange(inrange, element) {
           if(inrange) {
             element.addClass('pull-menu-item-selected')
