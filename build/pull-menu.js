@@ -62,11 +62,12 @@ angular.module('pullMenu', [])
             element.removeClass('pull-menu-item-selected')
           }
         })
-        if(relative+height >= height/2) return element.css({
-            [transform]: 'translateY(0)'
-          })
+
         if(relative >= 0) return
         element.css({[transform]: 'translateY('+(relative)+'px)'})
+        if(relative+height >= height/2) element.css({
+          [transform]: 'translateY(0)'
+        })
       })
       $document.on('mouseup touchend touchcancel', function(event) {
         dragging = false
