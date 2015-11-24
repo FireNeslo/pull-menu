@@ -59,9 +59,7 @@ directive('pullMenu', function pullMenu($document) {
       $document.on('mouseup touchend touchcancel', function(event) {
         dragging = false
         var relative = client('y', event) - position
-        setTimeout(function() {
-          element.css({[transform]: 'translateY(-100%)' })
-        },250)
+        element.css({[transform]: 'translateY(-100%)' })
         if(relative < height/2) return
         var selected = element[0].querySelector('.pull-menu-item-selected')
         if(selected) {
