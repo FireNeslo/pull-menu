@@ -1,0 +1,21 @@
+pull-menu, [pull-menu] {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: transform linear 250ms;
+}
+
+pull-menu.open, [pull-menu].open {
+  transform: translateY(0%);
+}
+
+pull-menu-item, [pull-menu-item] {
+  display: block;
+  flex: 1;
+}
+
+pull-menu-item.pull-menu-item-selected {
+  color: blue;
+}

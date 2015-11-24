@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pull-Menu</title>
+  <link rel="stylesheet" href="pull-menu.css">
+</head>
+<body ng-app="pullMenu">
+  <pull-menu>
+    <pull-menu-item on-select="selected = 'one'">
+      <h3>One</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'two'">
+      <h3>Two</h3>
+    </pull-menu-item>
+  </pull-menu>
+
+  <h1>
+    Selected: {{selected}}
+  </h1>
+
+  <script src="vendor.js" charset="utf-8"></script>
+  <script src="pull-menu.js" charset="utf-8"></script>
+</body>
+</html>

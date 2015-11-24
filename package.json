@@ -1,0 +1,22 @@
+{
+  "name": "pull-menu",
+  "version": "1.0.0",
+  "description": "Simple pull menu",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "author": "Øystein Ø. Olsen <fireneslo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
+  "devDependencies": {
+    "bower-files": "^3.11.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0"
+  }
+}

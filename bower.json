@@ -1,0 +1,25 @@
+{
+  "name": "pull-menu",
+  "version": "1.0.0",
+  "description": "Simple pull menu",
+  "main": [
+    "build/pull-menu.js",
+    "build/pull-menu.css"
+  ],
+  "authors": [
+    "Øystein Ø. Olsen <fireneslo@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
