@@ -23,9 +23,16 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('demo'))
     .pipe(server.reload());
 })
-gulp.task('vendor', function () {
+gulp.task('vendor',['vendor.css'], function () {
   gulp.src(vendor.ext('js').files)
     .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('demo'))
+    .pipe(server.reload());
+})
+
+gulp.task('vendor.css', function(){
+  gulp.src(vendor.ext('css').files)
+    .pipe(concat('vendor.css'))
     .pipe(gulp.dest('demo'))
     .pipe(server.reload());
 })
