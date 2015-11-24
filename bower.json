@@ -9,9 +9,7 @@
   "authors": [
     "Øystein Ø. Olsen <fireneslo@gmail.com>"
   ],
-  "license": "ISC",
-  "moduleType": [],
-  "homepage": "",
+  "license": "GPL",
   "ignore": [
     "**/.*",
     "node_modules",
