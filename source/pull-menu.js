@@ -2,7 +2,8 @@ directive('pullMenu', function pullMenu($document) {
   var transform = 'transform' in $document[0].body.style ?
     'transform' : 'WebkitTransform'
   function client(axis,event) {
-    return (event.touches?event.touches[0]:event)['client'+axis.toUpperCase()]
+    return (event.touches?event.touches[0]||{}:event)
+      ['client'+axis.toUpperCase()] || Infinity
   }
   return {
     controller: function PullMenuController() {
