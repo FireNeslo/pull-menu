@@ -40,6 +40,7 @@ directive('pullMenu', function pullMenu($document) {
           callback(selected >= start && selected < end, option.element)
         })
       }
+      var last = 0;
       $document.on('touchmove mousemove', function move(event) {
         if(!dragging) return
         var relative = client('y',event) - position - height
