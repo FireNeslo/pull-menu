@@ -17,7 +17,7 @@ directive('pullMenu', function pullMenu($document) {
       var options = []
       var elements = menu.elements
       $document.on('mousedown touchstart', function start(event) {
-        height = element[0].clientHeight
+        height = element[0].offsetHeight
         dragging = true
         position = client('y', event)
         options = elements
@@ -49,14 +49,19 @@ directive('pullMenu', function pullMenu($document) {
             element.removeClass('pull-menu-item-selected')
           }
         })
-        if(relative > height) return
-        element.css({[transform]: 'translateY('+relative+'px)'})
+        if(relative+height >= height/2) return element.css({
+            [transform]: 'translateY(0)'
+          })
+        if(relative >= 0) return
+        element.css({[transform]: 'translateY('+(relative)+'px)'})
       })
       $document.on('mouseup touchend touchcancel', function(event) {
         dragging = false
         var relative = client('y', event) - position
-        element.css({[transform]: 'translateY(-100%)' })
-        if(relative < height) return
+        setTimeout(function() {
+          element.css({[transform]: 'translateY(-100%)' })
+        },250)
+        if(relative < height/2) return
         var selected = element[0].querySelector('.pull-menu-item-selected')
         if(selected) {
           scope.$eval(selected.getAttribute('on-select'))
