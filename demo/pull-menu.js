@@ -29,7 +29,7 @@ angular.module('pullMenu', [])
       var options = []
       var elements = menu.elements
       $document.on('mousedown touchstart', function start(event) {
-        height = element[0].clientHeight
+        height = element[0].height
         dragging = true
         position = client('y', event)
         options = elements

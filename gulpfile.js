@@ -3,7 +3,7 @@ var concat = require('gulp-concat')
 var server = require('gulp-connect')
 var prefix = require('gulp-autoprefixer')
 var vendor = require('bower-files')(require('./bower.json'))
-
+var styl = require('gulp-stylus')
 
 gulp.task('default', ['build', 'watch', 'serve'])
 gulp.task('build', ['scripts', 'styles'])
@@ -16,8 +16,8 @@ gulp.task('scripts', function() {
     .pipe(server.reload());
 })
 gulp.task('styles', function() {
-  return gulp.src('source/**/*.css')
-    .pipe(concat('pull-menu.css'))
+  return gulp.src('source/demo.styl')
+    .pipe(styl())
     .pipe(prefix())
     .pipe(gulp.dest('build'))
     .pipe(gulp.dest('demo'))
@@ -32,12 +32,13 @@ gulp.task('vendor', function () {
 
 gulp.task('watch', ['vendor'], function() {
   gulp.watch('source/**/*.js', ['scripts'])
-  gulp.watch('source/**/*.css', ['styles'])
+  gulp.watch('source/**/*.styl', ['styles'])
 })
 
 gulp.task('serve', function() {
   server.server({
     root: 'demo',
+    port: 8081,
     livereload: true
   });
 });
