@@ -4,14 +4,34 @@
   <meta charset="UTF-8">
   <title>Pull-Menu</title>
   <link rel="stylesheet" href="pull-menu.css">
+  <style media="screen">
+    .pull-menu-item-selected {
+      background-color: skyblue;
+    }
+  </style>
 </head>
 <body ng-app="pullMenu">
   <pull-menu>
     <pull-menu-item on-select="selected = 'one'">
-      <h3>One</h3>
+      <h3>one</h3>
     </pull-menu-item>
     <pull-menu-item on-select="selected = 'two'">
-      <h3>Two</h3>
+      <h3>two</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'three'">
+      <h3>three</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'four'">
+      <h3>four</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'five'">
+      <h3>five</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'six'">
+      <h3>six</h3>
+    </pull-menu-item>
+    <pull-menu-item on-select="selected = 'seven'">
+      <h3>seven</h3>
     </pull-menu-item>
   </pull-menu>
 
