@@ -47,6 +47,6 @@ angular.module('application', ['pullMenu'])
 ## &lt;pull-menu /&gt;
 pull menu container
 
-## &lt;pull-menu on-select="select()" /&gt;
+## &lt;pull-menu-item on-select="select()" /&gt;
 pull menu item
 * **on-select** *angular expression* - called when item is selected
